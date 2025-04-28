@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChordShot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="80px" alt="ChordShot logo">
+        </div>
+        <div class="nav-right">
+            <a href="#">About</a>
+            <a href="#">Docs</a>
+            <a href="#">Team</a>
+            <button class="github-btn">GitHub</button>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>ChordShot</h1>
+        <p>Transform your images into a harmonious soundscape where every picture tells its own musical story.</p>
+        <button class="try-now">Try Now</button>
+    </div>
+    <img src="{{ url_for('static', filename='images/Robot.jpeg') }}" alt="Robot playing guitar">
+</section>
+
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>What we do differently?</h2>
+        <div class="features-container">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/detected_objects.png') }}" alt="Objects detection">
+                <h3>Objects detection</h3>
+                <p>High-precision object detection with YOLOv8 for seamless automation.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/color-analysis.jpg') }}" alt="Color analysis">
+                <h3>Color analysis</h3>
+                <p>Extracting and interpreting dominant colors for insightful image analysis.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/background-scene.jpg') }}" alt="background scene recognition">
+                <h3>Background scene recognition</h3>
+                <p>Understanding image backgrounds to capture contextual meaning.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Upload Image Section -->
+<section class="upload">
+    <h2>Upload your image here</h2>
+    <div class="upload-box">
+        <!-- Image Preview -->
+        <label for="imageInput" class="upload-label">
+            <img id="previewImage" src="{{ url_for('static', filename='images/upload-img.jpg') }}" alt="Upload image">
+            <div class="hover-overlay">Click to Upload</div>
+        </label>
+        
+        <!-- Hidden File Input -->
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="previewFile()">
+
+        <div id="loader" style="display: none;">
+            <div class="spinner"></div>
+            <div id="loadingText">Generating music...</div>
+          </div>          
+        
+        <!-- Submit and Generate Music Buttons -->
+        <button class="generate-music" onclick="generateMusic()" id="generateBtn">Generate Music</button>
+        <audio id="audioPlayer" controls style="display: none; margin-top: 20px;"></audio>
+        
+        
+    </div>
+</section>
+
+
+    <!-- Creators Section -->
+    <section class="creators">
+        <h2>Creators</h2>
+        <div class="creator-container">
+            <div class="creator">
+                <p>The only truth is music</p>
+                <span>Vishaal</span>
+            </div>
+            <div class="creator">
+                <p>Strongest form of magic</p>
+                <span>Varun</span>
+            </div>
+            <div class="creator">
+                <p>Outburst of the soul</p>
+                <span>Sujith</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team Section -->
+    <section class="join-team">
+        <h2>Join our team</h2>
+        <button class="join">Join</button>
+        <button class="contribute">Contribute</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>ChordShot</p>
+        <div class="social-icons">
+            <a href="#">🔗</a>
+            <a href="#">📷</a>
+            <a href="#">🎵</a>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+        
+</body>
+</html>
